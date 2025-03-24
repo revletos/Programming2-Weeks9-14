@@ -23,10 +23,18 @@ public class CoroutineGrower : MonoBehaviour
     {
         
     }
+    public void StartGrowing()
+    {
+        StartCoroutine(Grow());
+        Debug.Log("yes");
+    }
 
     public IEnumerator Grow()
     {
+        //hide until they grow 
         apple.localScale = Vector3.zero;
+
+        //grow the tree
         t = 0;
         while(t<1)
         {
@@ -35,8 +43,11 @@ public class CoroutineGrower : MonoBehaviour
             yield return null;
         }
 
+        yield return new WaitForSeconds(2);
+
+        // grow the apple
         t = 0;
-        while (t>1)
+        while (t<1)
         {
             t += Time.deltaTime;
             apple.localScale = Vector3.one * maxSize * curve.Evaluate(t);

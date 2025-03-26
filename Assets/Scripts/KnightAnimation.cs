@@ -9,6 +9,8 @@ public class KnightAnimation : MonoBehaviour
     SpriteRenderer sr;
     public float speed = 2;
     public bool canRun = true;
+    public bool jumping = false;
+    public AnimationCurve jumpcurve;
 
     // Start is called before the first frame update
     void Start()
@@ -34,8 +36,15 @@ public class KnightAnimation : MonoBehaviour
         {
             transform.position += transform.right * direction * speed * Time.deltaTime;
         }
+           
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetBool("jump", true);
+            if (jumping == true)
+            {
 
-        
+            }
+        }
     }
 
     public void AttackEnd()

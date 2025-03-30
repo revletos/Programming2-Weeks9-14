@@ -39,6 +39,7 @@ public class ClockScript : MonoBehaviour
         while (true)
         {
             StartCoroutine(ClockRun());
+            yield return null;
         }
     }
 

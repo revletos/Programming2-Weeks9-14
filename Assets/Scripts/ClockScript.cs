@@ -36,17 +36,19 @@ public class ClockScript : MonoBehaviour
 
     private void Start()
     {
-        while (true)
-        {
+      
             StartCoroutine(ClockRun());
-            yield return null;
-        }
+            //yield return null;
+    
     }
 
     IEnumerator ClockRun()
     {
-        yield return StartCoroutine(MoveHands());
-        yield return StartCoroutine(MoveHands());
+        while (true)
+        {
+            yield return StartCoroutine(MoveHands());
+        }
+        
     }
 
     IEnumerator MoveHands()

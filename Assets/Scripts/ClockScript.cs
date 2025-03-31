@@ -12,7 +12,11 @@ public class ClockScript : MonoBehaviour
     public float t;
     public int hour = 0;
 
-    public UnityEvent OClock;
+    public UnityEvent<int> OClock; //angle brackets the type of variable of argument that will be passed
+
+
+    Coroutine clockRunning;
+    IEnumerator handsMoving;
     // Start is called before the first frame update
     
 
@@ -37,18 +41,22 @@ public class ClockScript : MonoBehaviour
     private void Start()
     {
       
-            StartCoroutine(ClockRun());
+            clockRunning = StartCoroutine(ClockRun());
             //yield return null;
     
     }
 
     IEnumerator ClockRun()
     {
+        hour = 0;
         while (true)
         {
-            yield return StartCoroutine(MoveHands());
+            handsMoving = MoveHands(); //asign serperately to be able to stop it
+            //must be IEnumerator before start
+            yield return StartCoroutine(handsMoving);
+            //yield return StartCoroutine(MoveHands()); (old code)
         }
-        
+
     }
 
     IEnumerator MoveHands()
@@ -61,6 +69,27 @@ public class ClockScript : MonoBehaviour
             hourHand.Rotate(0, 0, -(30 / hourLenght) * Time.deltaTime);
             yield return null;
         }
-        OClock.Invoke();
+        hour++;
+        if ( hour>12)
+        {
+            hour = 1;
+        }
+        OClock.Invoke(hour);
+
     }
-}
+
+    public void StopClock()
+    {
+        if (clockRunning != null)
+        {
+            StopCoroutine(clockRunning);
+            //dont reference, call the one that is started, use variable
+        }
+
+        if (handsMoving != null)
+        {
+            StopCoroutine(handsMoving);
+        }
+    }
+
+ }

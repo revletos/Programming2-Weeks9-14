@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,11 @@ public class KnightAnimation : MonoBehaviour
     public bool canRun = true;
     public bool jumping = false;
     public AnimationCurve jumpcurve;
+    public AudioClip footsteps;
+    public AudioSource audio;
+
+    public CinemachineImpulseSource impulse;
+
 
     // Start is called before the first frame update
     void Start()
@@ -51,5 +57,18 @@ public class KnightAnimation : MonoBehaviour
     {
         Debug.Log("ready to run");
         canRun = true;
+    }
+
+    public void FootStepSFX()
+    {
+        Debug.Log("footsteps");
+        Footsteps();
+        impulse.GenerateImpulse();
+        //audio.PlayOneShot(footsteps);
+    }
+
+    public void Footsteps()
+    {
+        audio.PlayOneShot(footsteps);
     }
 }

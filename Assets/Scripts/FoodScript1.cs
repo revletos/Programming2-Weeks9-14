@@ -8,8 +8,10 @@ public class FoodScript1 : MonoBehaviour
 {
     public GameObject prefabtext;
     public SpriteRenderer sr;
+    public SpriteRenderer slime;
     public Vector2 mouse;
     public bool lastTime = false;
+    public Color colourChange;
     bool mouseOver;
 
     // Start is called before the first frame update
@@ -28,7 +30,13 @@ public class FoodScript1 : MonoBehaviour
         if (sr.bounds.Contains(mouse) && Input.GetMouseButtonDown(0))
         {
             Debug.Log("a");
+            //slime.transform.localScale = new Vector3(slime.transform.localScale.x*1.1f, slime.transform.localScale.y*1.1f, 2);
+            //slime.transform.localScale = new Vector3(slime.transform.localScale.x * 0.9f, slime.transform.localScale.y * 0.9f, 2);
+            colourChange = new Color(0, 250, 0);
+            slime.color = colourChange;
         }
+
+
     //    if (sr.bounds.Contains(mouse))
     //    {
     //        //if (lastTime == false)
@@ -54,4 +62,10 @@ public class FoodScript1 : MonoBehaviour
     //    prefabtext.SetActive(true);
         
     }
+
+public void Watermelon()
+    {
+        slime.transform.localScale = new Vector3(2, 2, 2);
+    }
+
 }

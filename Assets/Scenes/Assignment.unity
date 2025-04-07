@@ -323,7 +323,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 908232216, guid: 529af4bdebfb57844ac40648c60dbc05, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.2924528, g: 0.07035421, b: 0.07035421, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -360,6 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e05fb808a6c50bc418d2b3ebf73db5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
 --- !u!1001 &638379725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -684,18 +685,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7506534622858760497, guid: 2245329802d27da488b6de2599cd9e8b, type: 3}
-      propertyPath: m_Color.b
-      value: 0.8632076
-      objectReference: {fileID: 0}
-    - target: {fileID: 7506534622858760497, guid: 2245329802d27da488b6de2599cd9e8b, type: 3}
-      propertyPath: m_Color.g
-      value: 0.87131065
-      objectReference: {fileID: 0}
-    - target: {fileID: 7506534622858760497, guid: 2245329802d27da488b6de2599cd9e8b, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8187521832293933737, guid: 2245329802d27da488b6de2599cd9e8b, type: 3}
       propertyPath: m_Name
       value: watermelon
@@ -730,7 +719,6 @@ MonoBehaviour:
   slime: {fileID: 493750504}
   mouse: {x: 0, y: 0}
   lastTime: 0
-  colourChange: {r: 0, g: 0, b: 0, a: 0}
 --- !u!212 &2035034384 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7506534622858760497, guid: 2245329802d27da488b6de2599cd9e8b, type: 3}

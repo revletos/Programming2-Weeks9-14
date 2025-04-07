@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class Slimemovement : MonoBehaviour
 {
-    float speed = 1;
+    public float speed = 1;
     // Start is called before the first frame update
     void Start()
     {

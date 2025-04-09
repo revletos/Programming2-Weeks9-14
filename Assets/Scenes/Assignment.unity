@@ -274,6 +274,7 @@ GameObject:
   - component: {fileID: 493750505}
   - component: {fileID: 493750504}
   - component: {fileID: 493750506}
+  - component: {fileID: 493750507}
   m_Layer: 0
   m_Name: cheese
   m_TagString: Untagged
@@ -361,6 +362,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+--- !u!114 &493750507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493750503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a25553f6f7cb144c94421c82a3ecd37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fs1: {fileID: 2035034383}
+  watermelonsprite: {fileID: 2035034384}
+  mouse: {x: 0, y: 0}
 --- !u!1001 &638379725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -714,6 +730,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b0ef6fc17302e4ab3f7cc8cdb76742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  watermelonclick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2035034383}
+        m_TargetAssemblyTypeName: FoodScript1, Assembly-CSharp
+        m_MethodName: Watermelon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   prefabtext: {fileID: 701137560}
   sr: {fileID: 2035034384}
   slime: {fileID: 493750504}

@@ -7,7 +7,7 @@ using static Unity.Burst.Intrinsics.X86;
 
 public class FoodScript1 : MonoBehaviour
 {
-    public UnityEvent watermelonclick = new UnityEvent();
+    //public UnityEvent watermelonclick = new UnityEvent();
     public GameObject prefabtext;
     public SpriteRenderer sr;
     public SpriteRenderer slime;
@@ -37,8 +37,8 @@ public class FoodScript1 : MonoBehaviour
             //slime.transform.localScale = new Vector3(slime.transform.localScale.x * 0.9f, slime.transform.localScale.y * 0.9f, 2);
             //colourChange = new Color(0, 250, 0);
             //slime.color = colourChange;
-            hue = Random.Range(0f, 1f);
-            slime.color = Color.HSVToRGB(hue, 1, 1);
+            //hue = Random.Range(0f, 1f);
+            //slime.color = Color.HSVToRGB(hue, 1, 1);
         }
 
 
@@ -70,6 +70,7 @@ public class FoodScript1 : MonoBehaviour
 
 public void Watermelon()
     {
+        Debug.Log("click");
         slime.transform.localScale = new Vector3(slime.transform.localScale.x*1.1f, slime.transform.localScale.y*1.1f, 2);
     }
 

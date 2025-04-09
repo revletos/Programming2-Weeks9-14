@@ -12,7 +12,7 @@ public class SlimeListener : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fs1.watermelonclick.AddListener(Watermelon);
+        watermelonclick.AddListener(fs1.Watermelon);
     }
 
     // Update is called once per frame
@@ -21,6 +21,7 @@ public class SlimeListener : MonoBehaviour
         mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (watermelonsprite.bounds.Contains(mouse) && Input.GetMouseButtonDown(0))
         {
+            Debug.Log("bb");
             watermelonclick.Invoke();
         }
         }

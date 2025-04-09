@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class Slimemovement : MonoBehaviour
 {
-    public float speed = 1;
+    public float speed = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,15 +15,19 @@ public class Slimemovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+     public void SlimeMoving()
+    {
         Vector2 pos = transform.position;
-        pos.x += speed*Time.deltaTime;
+        pos.x += speed * Time.deltaTime;
         Vector2 slimemove = Camera.main.WorldToScreenPoint(pos);
 
-        if (slimemove.x < 0 || slimemove.x > Screen.width)
+        if (slimemove.x < 0 + 100 || slimemove.x > Screen.width - 100)
         {
             speed = speed * -1;
         }
         transform.position = pos;
+        Debug.Log(slimemove.x);
     }
-
 }

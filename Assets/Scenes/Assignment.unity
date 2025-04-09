@@ -322,7 +322,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -5
   m_Sprite: {fileID: 908232216, guid: 529af4bdebfb57844ac40648c60dbc05, type: 3}
   m_Color: {r: 0.2924528, g: 0.07035421, b: 0.07035421, a: 1}
   m_FlipX: 0
@@ -730,21 +730,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b0ef6fc17302e4ab3f7cc8cdb76742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  watermelonclick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2035034383}
-        m_TargetAssemblyTypeName: FoodScript1, Assembly-CSharp
-        m_MethodName: Watermelon
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   prefabtext: {fileID: 701137560}
   sr: {fileID: 2035034384}
   slime: {fileID: 493750504}
@@ -810,6 +795,10 @@ PrefabInstance:
     - target: {fileID: 1304758118881287732, guid: b0486b060485994488bc49bf5675313b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173499813671267294, guid: b0486b060485994488bc49bf5675313b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -70,7 +70,6 @@ public class FoodScript1 : MonoBehaviour
 
 public void Watermelon()
     {
-        Debug.Log("click");
         slime.transform.localScale = new Vector3(slime.transform.localScale.x*1.1f, slime.transform.localScale.y*1.1f, 2);
     }
 

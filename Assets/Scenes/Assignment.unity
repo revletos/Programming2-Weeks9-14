@@ -379,6 +379,8 @@ GameObject:
   - component: {fileID: 493750504}
   - component: {fileID: 493750506}
   - component: {fileID: 493750507}
+  - component: {fileID: 493750509}
+  - component: {fileID: 493750508}
   m_Layer: 0
   m_Name: cheese
   m_TagString: Untagged
@@ -427,8 +429,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -5
-  m_Sprite: {fileID: 908232216, guid: 529af4bdebfb57844ac40648c60dbc05, type: 3}
-  m_Color: {r: 0.2924528, g: 0.07035421, b: 0.07035421, a: 1}
+  m_Sprite: {fileID: 329682307, guid: 53ac5f038f136794f8cf985114b49e53, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -481,6 +483,42 @@ MonoBehaviour:
   fs1: {fileID: 2035034383}
   watermelonsprite: {fileID: 2035034384}
   mouse: {x: 0, y: 0}
+--- !u!111 &493750508
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493750503}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &493750509
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493750503}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 807da47b58fd144419bb2bbc0b0fd374, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &638379725
 PrefabInstance:
   m_ObjectHideFlags: 0

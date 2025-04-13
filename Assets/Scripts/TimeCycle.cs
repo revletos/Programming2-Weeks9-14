@@ -22,19 +22,19 @@ public class TimeCycle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        t += Time.deltaTime;
+        t += Time.deltaTime * 0.1f;
         slider.value = t % slider.maxValue; 
-        if (slider.value >0.75)
+        if (slider.value < 0.75)
         {
-            day = false;
+            moving.Invoke();
 
         }
         else
         {
-            day = true;
-            moving.Invoke();
+ 
         }
-        Debug.Log(day);
+        Debug.Log(slider.value);    
+        //Debug.Log(day);
     }
     
 }

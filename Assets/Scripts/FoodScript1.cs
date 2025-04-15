@@ -8,8 +8,12 @@ using static Unity.Burst.Intrinsics.X86;
 public class FoodScript1 : MonoBehaviour
 {
     //public UnityEvent watermelonclick = new UnityEvent();
-    public GameObject prefabtext;
-    public SpriteRenderer sr;
+    public GameObject watermelonprefabtext;
+    public GameObject cupcakeprefabtext;
+    public GameObject teaprefabtext;
+    public SpriteRenderer watermelon;
+    public SpriteRenderer cupcake;
+    public SpriteRenderer tea;
     public SpriteRenderer slime;
     public Vector2 mouse;
     public bool lastTime = false;
@@ -26,11 +30,13 @@ public class FoodScript1 : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //Debug.Log(mouse);
+        mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition); // defines mouse variable as the player's mouse position
+        //Debug.Log(mouse); // used to test for mouse position before Sprite Renderer bounds contains function was used 
 
-        prefabtext.SetActive(sr.bounds.Contains(mouse));  //activate prefab when the mouse position is over the bounds of the sprite (and disable otherwise)
-        if (sr.bounds.Contains(mouse) && Input.GetMouseButtonDown(0))
+        watermelonprefabtext.SetActive(watermelon.bounds.Contains(mouse));  //activate prefab when the mouse position is over the bounds of the sprite (and disable otherwise)
+        cupcakeprefabtext.SetActive(cupcake.bounds.Contains(mouse));        //activate prefab when the mouse position is over the bounds of the sprite (and disable otherwise)
+        teaprefabtext.SetActive(tea.bounds.Contains(mouse));        //activate prefab when the mouse position is over the bounds of the sprite (and disable otherwise)
+        if (watermelon.bounds.Contains(mouse) && Input.GetMouseButtonDown(0))
         {
             Debug.Log("a");
             //slime.transform.localScale = new Vector3(slime.transform.localScale.x*1.1f, slime.transform.localScale.y*1.1f, 2);
@@ -70,7 +76,7 @@ public class FoodScript1 : MonoBehaviour
 
 public void Watermelon()
     {
-        slime.transform.localScale = new Vector3(slime.transform.localScale.x*1.1f, slime.transform.localScale.y*1.1f, 2);
+        slime.transform.localScale = new Vector3(slime.transform.localScale.x*1.1f, slime.transform.localScale.y*1.1f, 2); // Increase the size of the slime by 110% its current size in both x and y scales
     }
 
 public void Cupcake()

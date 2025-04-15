@@ -6,23 +6,36 @@ using UnityEngine.Events;
 public class SlimeListener : MonoBehaviour
 {
     UnityEvent watermelonclick = new UnityEvent();
+    UnityEvent cupcakeclick = new UnityEvent();
+    UnityEvent teaclick = new UnityEvent();
     public FoodScript1 fs1;
     public SpriteRenderer watermelonsprite;
+    public SpriteRenderer cupcakesprite;
+    public SpriteRenderer teasprite;
     public Vector2 mouse;
     // Start is called before the first frame update
     void Start()
     {
         watermelonclick.AddListener(fs1.Watermelon);
+        cupcakeclick.AddListener(fs1.Cupcake);
+        teaclick.AddListener(fs1.Drink);
     }
 
     // Update is called once per frame
     void Update()
     {
-        mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (watermelonsprite.bounds.Contains(mouse) && Input.GetMouseButtonDown(0))
+        mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition); // defines mouse variable as the player's mouse position
+        if (watermelonsprite.bounds.Contains(mouse) && Input.GetMouseButtonDown(0)) // if the mouse is over the watermelon AND the left mouse button is pressed
         {
-            Debug.Log("bb");
-            watermelonclick.Invoke();
+            watermelonclick.Invoke(); // run the code for the watermelon event
         }
+        if (cupcakesprite.bounds.Contains(mouse) && Input.GetMouseButtonDown(0)) // if the mouse is over the cupcake AND the left mouse button is pressed
+        {
+            cupcakeclick.Invoke(); // run the code for the cupcake event
         }
+        if (teasprite.bounds.Contains(mouse) && Input.GetMouseButtonDown(0)) // if the mouse is over the tea AND the left mouse button is pressed
+        {
+            teaclick.Invoke(); // run the code for the tea event
+        }
+    }
 }

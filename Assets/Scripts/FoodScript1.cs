@@ -9,36 +9,36 @@ using static Unity.Burst.Intrinsics.X86;
 public class FoodScript1 : MonoBehaviour
 {
     //public UnityEvent watermelonclick = new UnityEvent();
-    public GameObject watermelonprefabtext;
+    public GameObject watermelonprefabtext; // Declare prefab text assets
     public GameObject cupcakeprefabtext;
     public GameObject teaprefabtext;
-    public GameObject watermelonindicator1;
+    public GameObject watermelonindicator1;  // Declare all indicators
     public GameObject watermelonindicator2;
     public GameObject cupcakeindicator1;
     public GameObject cupcakeindicator2;
     public GameObject cupcakeindicator3;
     public GameObject teaindicator1;
     public GameObject teaindicator2;
-    public SpriteRenderer watermelon;
+    public SpriteRenderer watermelon; //Make a call to the specific sprite for sprite render bounds contains functions
     public SpriteRenderer cupcake;
     public SpriteRenderer tea;
     public SpriteRenderer slime;
-    public Vector2 mouse;
-    public bool lastTime = false;
+    public Vector2 mouse;           // Declare mouse as a vector 2
+    //public bool lastTime = false;
     public float t;
 
-    Coroutine watermelonindicator;
+    Coroutine watermelonindicator; // Declare coroutines
     Coroutine cupcakeindicator;
     Coroutine teaindicator;
     //public Color colourChange;
-    bool mouseOver;
-    float hue;
+    //bool mouseOver;
+    float hue;                   // Declare hue as a float variables
 
     // Start is called before the first frame update
     void Start()
     {
-        t = 0;
-        watermelonindicator1.SetActive(false);
+        t = 0;                                      // Set the t value to be 0 at start
+        watermelonindicator1.SetActive(false);      //Set all indicators to be hidden at start
         watermelonindicator2.SetActive(false);
         cupcakeindicator1.SetActive(false);
         cupcakeindicator2.SetActive(false);
@@ -123,39 +123,40 @@ public class FoodScript1 : MonoBehaviour
 
     public void Cupcake()
     {
-        slime.transform.localScale = new Vector3(slime.transform.localScale.x * 0.9f, slime.transform.localScale.y * 0.9f, 2);
-        cupcakeindicator = StartCoroutine(SpawnIndicatorCupcake()); // Start the cupcake indicator coroutine (line 61)
+        slime.transform.localScale = new Vector3(slime.transform.localScale.x * 0.9f, slime.transform.localScale.y * 0.9f, 2);// Decrease the size of the slime by 90% its current size in both x and y scales
+        cupcakeindicator = StartCoroutine(SpawnIndicatorCupcake()); // Start the cupcake indicator coroutine (line 79)
     }
 
     public void Drink()
     {
-        hue = Random.Range(0f, 1f);
-        slime.color = Color.HSVToRGB(hue, 1, 1);
-        teaindicator = StartCoroutine(SpawnIndicatorTea());
+        hue = Random.Range(0f, 1f); // Set boundary of the random range to hue's possible range (see implementation log for more explanation)
+        slime.color = Color.HSVToRGB(hue, 1, 1); // Change slime colour to random hue with maximum saturation and brightness. Referenced code from unity forums (link in implementation log)
+        teaindicator = StartCoroutine(SpawnIndicatorTea()); // Start the tea inidicator coroutine (line 97)
     }
 
-    IEnumerator SpawnIndicatorWatermelon()
+    IEnumerator SpawnIndicatorWatermelon() // Coroutine to spawn watermelon inidcators 
+                                           // In hindsight, the coroutine might have been better elsewhere. :p
     {
-        watermelonindicator1.SetActive(true);
+        watermelonindicator1.SetActive(true);//Turn on sprite
         watermelonindicator2.SetActive(true);
-        yield return null;
+        yield return null;                   //Manadatory yield return, and nothing needs to get returned
 
     }
 
-    IEnumerator SpawnIndicatorCupcake()
+    IEnumerator SpawnIndicatorCupcake()     // Same logic as above
     {
         cupcakeindicator1.SetActive(true);
         cupcakeindicator2.SetActive(true);
         cupcakeindicator3.SetActive(true);
-        yield return null;
+        yield return null;                   //Manadatory yield return, and nothing needs to get returned
 
     }
 
-    IEnumerator SpawnIndicatorTea()
+    IEnumerator SpawnIndicatorTea()         //Same logic as above
     {
         teaindicator1.SetActive(true);
         teaindicator2.SetActive(true);
-        yield return null;
+        yield return null;                   //Manadatory yield return, and nothing needs to get returned
     }
 }
 

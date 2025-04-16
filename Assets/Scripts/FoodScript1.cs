@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 using static Unity.Burst.Intrinsics.X86;
 
 public class FoodScript1 : MonoBehaviour
@@ -11,12 +12,17 @@ public class FoodScript1 : MonoBehaviour
     public GameObject watermelonprefabtext;
     public GameObject cupcakeprefabtext;
     public GameObject teaprefabtext;
+    public GameObject watermelonindicator1;
+    public GameObject watermelonindicator2;
     public SpriteRenderer watermelon;
     public SpriteRenderer cupcake;
     public SpriteRenderer tea;
     public SpriteRenderer slime;
     public Vector2 mouse;
     public bool lastTime = false;
+    public float t;
+
+    Coroutine watermelonindicator;
     //public Color colourChange;
     bool mouseOver;
     float hue;
@@ -24,7 +30,9 @@ public class FoodScript1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        t = 0;
+        watermelonindicator1.SetActive(false);
+        watermelonindicator2.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,6 +44,25 @@ public class FoodScript1 : MonoBehaviour
         watermelonprefabtext.SetActive(watermelon.bounds.Contains(mouse));  //activate prefab when the mouse position is over the bounds of the sprite (and disable otherwise)
         cupcakeprefabtext.SetActive(cupcake.bounds.Contains(mouse));        //activate prefab when the mouse position is over the bounds of the sprite (and disable otherwise)
         teaprefabtext.SetActive(tea.bounds.Contains(mouse));        //activate prefab when the mouse position is over the bounds of the sprite (and disable otherwise)
+
+        if (watermelonindicator != null)
+        {
+            if (t <= 5)
+            {
+                t = Time.deltaTime*300;
+            }
+            else
+            {
+                StopCoroutine(watermelonindicator);
+                watermelonindicator1.SetActive(false);
+                watermelonindicator2.SetActive(false);
+                t = 0;
+            }
+            
+        }
+
+
+
         if (watermelon.bounds.Contains(mouse) && Input.GetMouseButtonDown(0))
         {
             Debug.Log("a");
@@ -48,45 +75,60 @@ public class FoodScript1 : MonoBehaviour
         }
 
 
-    //    if (sr.bounds.Contains(mouse))
-    //    {
-    //        //if (lastTime == false)
-    //        //{
-    //            OverTarget();
-    //            Debug.Log("over");
-                
-    //            //GameObject newText = Instantiate(prefabtext, mouse, Quaternion.identity);
-    //        //}
-    //    }
-    //    else
-    //    {
+        //    if (sr.bounds.Contains(mouse))
+        //    {
+        //        //if (lastTime == false)
+        //        //{
+        //            OverTarget();
+        //            Debug.Log("over");
 
-    //        ;//lastTime = false;
-    //    }
-    //    //lastTime = sr.bounds.Contains(mouse);
-       
-    //}
+        //            //GameObject newText = Instantiate(prefabtext, mouse, Quaternion.identity);
+        //        //}
+        //    }
+        //    else
+        //    {
 
-    //public void OverTarget()
-    //{
-    //    //GameObject newText = Instantiate(prefabtext, mouse, Quaternion.identity);
-    //    prefabtext.SetActive(true);
-        
+        //        ;//lastTime = false;
+        //    }
+        //    //lastTime = sr.bounds.Contains(mouse);
+
+        //}
+
+        //public void OverTarget()
+        //{
+        //    //GameObject newText = Instantiate(prefabtext, mouse, Quaternion.identity);
+        //    prefabtext.SetActive(true);
+
     }
 
-public void Watermelon()
+    public void Watermelon()
     {
-        slime.transform.localScale = new Vector3(slime.transform.localScale.x*1.1f, slime.transform.localScale.y*1.1f, 2); // Increase the size of the slime by 110% its current size in both x and y scales
+        slime.transform.localScale = new Vector3(slime.transform.localScale.x * 1.1f, slime.transform.localScale.y * 1.1f, 2); // Increase the size of the slime by 110% its current size in both x and y scales
+        watermelonindicator = StartCoroutine(SpawnIndicator());
+        Debug.Log(t);
+
     }
 
-public void Cupcake()
+    public void Cupcake()
     {
         slime.transform.localScale = new Vector3(slime.transform.localScale.x * 0.9f, slime.transform.localScale.y * 0.9f, 2);
     }
 
-public void Drink()
+    public void Drink()
     {
         hue = Random.Range(0f, 1f);
         slime.color = Color.HSVToRGB(hue, 1, 1);
     }
+
+    IEnumerator SpawnIndicator()
+    {
+        watermelonindicator1.SetActive(true);
+        watermelonindicator2.SetActive(true);
+        yield return null;
+
+
+
+    }
 }
+
+

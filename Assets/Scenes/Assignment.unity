@@ -225,6 +225,8 @@ MonoBehaviour:
   watermelonprefabtext: {fileID: 701137560}
   cupcakeprefabtext: {fileID: 1529285904}
   teaprefabtext: {fileID: 1679581643}
+  watermelonindicator1: {fileID: 1444492673}
+  watermelonindicator2: {fileID: 415972919}
   watermelon: {fileID: 2035034384}
   cupcake: {fileID: 1440226234}
   tea: {fileID: 2114593271}
@@ -404,6 +406,11 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3370336505038647726, guid: ff8bb6818807b7d469b02d331e103944, type: 3}
   m_PrefabInstance: {fileID: 696537066}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &415972919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8187521832293933737, guid: 2245329802d27da488b6de2599cd9e8b, type: 3}
+  m_PrefabInstance: {fileID: 2071628444}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &415972920 stripped
 Transform:
@@ -1172,6 +1179,11 @@ SpriteRenderer:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3370336505038647726, guid: ff8bb6818807b7d469b02d331e103944, type: 3}
   m_PrefabInstance: {fileID: 1460478947}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1444492673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8187521832293933737, guid: 2245329802d27da488b6de2599cd9e8b, type: 3}
+  m_PrefabInstance: {fileID: 526508803}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1444492674 stripped
 Transform:

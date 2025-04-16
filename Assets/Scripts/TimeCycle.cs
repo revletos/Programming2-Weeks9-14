@@ -33,7 +33,7 @@ public class TimeCycle : MonoBehaviour
         {
  
         }
-        Debug.Log(slider.value);    
+        //Debug.Log(slider.value);    
         //Debug.Log(day);
     }
     

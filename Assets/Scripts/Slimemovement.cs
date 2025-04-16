@@ -28,6 +28,6 @@ public class Slimemovement : MonoBehaviour
             speed = speed * -1;
         }
         transform.position = pos;
-        Debug.Log(slimemove.x);
+        //Debug.Log(slimemove.x);
     }
 }

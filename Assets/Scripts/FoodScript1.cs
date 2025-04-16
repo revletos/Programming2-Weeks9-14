@@ -23,6 +23,7 @@ public class FoodScript1 : MonoBehaviour
     public SpriteRenderer tea;
     public SpriteRenderer slime;
     public Vector2 mouse;           // Declare mouse as a vector 2
+    public float hold = 350; // Made it a public variable so I could adjust all 3 and test in inspector
     //public bool lastTime = false;
     public float t;
 
@@ -61,7 +62,7 @@ public class FoodScript1 : MonoBehaviour
         {
             if (t <= 2) // if the value of t is less than 2
             {
-                t = Time.deltaTime * 300; // increase t
+                t = Time.deltaTime * hold; // increase t
                                           // yes, I know this looks atrocious. Page 6 of my implementation log explains the madness somewhat
                                           // I'm very out of it and the dirty fix did relatively what I needed it to. 
             }
@@ -80,7 +81,7 @@ public class FoodScript1 : MonoBehaviour
         {
             if (t <= 2)
             {
-                t = Time.deltaTime * 300;
+                t = Time.deltaTime * hold;
             }
             else
             {
@@ -98,7 +99,7 @@ public class FoodScript1 : MonoBehaviour
         {
             if (t <= 2)
             {
-                t = Time.deltaTime * 300;
+                t = Time.deltaTime * hold;
             }
             else
             {

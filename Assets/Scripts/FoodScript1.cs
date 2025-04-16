@@ -8,7 +8,6 @@ using static Unity.Burst.Intrinsics.X86;
 
 public class FoodScript1 : MonoBehaviour
 {
-    //public UnityEvent watermelonclick = new UnityEvent();
     public GameObject watermelonprefabtext; // Declare prefab text assets
     public GameObject cupcakeprefabtext;
     public GameObject teaprefabtext;

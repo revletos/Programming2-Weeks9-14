@@ -5,18 +5,18 @@ using UnityEngine.Events;
 
 public class SlimeListener : MonoBehaviour
 {
-    UnityEvent watermelonclick = new UnityEvent();
+    UnityEvent watermelonclick = new UnityEvent(); //I'm pretty sure this isn't the right syntax but this was the only way it worked
     UnityEvent cupcakeclick = new UnityEvent();
     UnityEvent teaclick = new UnityEvent();
-    public FoodScript1 fs1;
-    public SpriteRenderer watermelonsprite;
+    public FoodScript1 fs1;               // Making script public so I can reference the method from there      
+    public SpriteRenderer watermelonsprite; //Make a call to the specific sprite for sprite render bounds contains functions
     public SpriteRenderer cupcakesprite;
     public SpriteRenderer teasprite;
-    public Vector2 mouse;
+    public Vector2 mouse;                   // Declare mouse as a vector 2
     // Start is called before the first frame update
     void Start()
     {
-        watermelonclick.AddListener(fs1.Watermelon);
+        watermelonclick.AddListener(fs1.Watermelon); // Add Listeners for all events
         cupcakeclick.AddListener(fs1.Cupcake);
         teaclick.AddListener(fs1.Drink);
     }
